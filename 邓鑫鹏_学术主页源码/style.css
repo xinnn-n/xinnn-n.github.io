@@ -1,0 +1,172 @@
+:root {
+  color-scheme: light;
+  --forest: #102e29;
+  --forest-deep: #0b231f;
+  --ink: #192823;
+  --muted: #465a51;
+  --surface: #f8faf8;
+  --border: #d7e1db;
+  --green: #245e4b;
+  --mint: #d8efdf;
+  --sans: "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+  --serif: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: 5.75rem; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: 1rem/1.75 var(--sans);
+}
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .25em; }
+a:focus-visible { outline: 2px solid #458a69; outline-offset: 5px; }
+h1, h2, h3, p { margin: 0; }
+.frame { width: min(66rem, calc(100% - 5rem)); margin-inline: auto; }
+.skip {
+  position: fixed;
+  left: 1rem;
+  top: .75rem;
+  z-index: 20;
+  padding: .5rem .75rem;
+  background: white;
+  transform: translateY(-180%);
+}
+.skip:focus { transform: translateY(0); }
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--forest-deep);
+  color: #ecf5ee;
+  border-bottom: 1px solid #2d4b42;
+}
+.masthead-inner {
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.wordmark { font-weight: 700; white-space: nowrap; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem 1.65rem; }
+nav a { color: #c8d9d0; text-decoration: none; font-size: .9rem; }
+nav a:hover, .wordmark:hover { color: white; text-decoration: underline; }
+.hero { background: var(--forest); color: #f6fbf7; }
+.hero-inner {
+  padding-block: clamp(3rem, 7vw, 5.45rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10.5rem, 12rem);
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 7rem);
+}
+.affiliation { font-size: .94rem; font-weight: 650; color: #acd5bf; letter-spacing: .06em; }
+h1 {
+  font: 700 clamp(3rem, 6vw, 4.65rem)/1.1 var(--serif);
+  letter-spacing: .06em;
+  margin-block: .75rem .65rem;
+}
+.position { color: #d1e3d8; font-size: .95rem; }
+.introduction { max-width: 38rem; margin-top: 1.2rem; color: #e1ece5; }
+.introduction strong { color: white; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.65rem; }
+.button {
+  text-decoration: none;
+  font-size: .94rem;
+  font-weight: 650;
+  border: 1px solid transparent;
+  padding: .53rem .95rem;
+  border-radius: .38rem;
+}
+.primary { color: var(--forest-deep); background: var(--mint); }
+.primary:hover { background: white; }
+.secondary { color: #f4faf6; border-color: #759486; }
+.secondary:hover { background: #24473d; }
+.hero a:focus-visible, .masthead a:focus-visible { outline-color: #c6ead4; }
+.profile-card { padding: .65rem; border: 1px solid #55786a; border-radius: .56rem; }
+.portrait { display: block; width: 100%; height: auto; border-radius: .26rem; }
+.academic-facts {
+  font-size: .875rem;
+  display: grid;
+  gap: .12rem;
+  color: #dcebe2;
+  padding: .65rem .18rem .12rem;
+}
+.academic-facts strong { margin-right: .25rem; color: white; }
+.content { padding-block: 1.25rem 2rem; }
+.section {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 1.1rem 2rem;
+  padding-block: 2.55rem;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child { border-bottom: 0; }
+h2 { color: var(--forest); font-size: 1.42rem; line-height: 1.35; }
+h3 { font-size: 1.075rem; line-height: 1.5; }
+.entries { min-width: 0; }
+.entry { padding-block: 1.2rem; border-bottom: 1px solid var(--border); }
+.entry:first-child { padding-top: 0; }
+.entry:last-child { padding-bottom: 0; border-bottom: 0; }
+.entry.featured {
+  padding: 1.15rem 1.3rem;
+  margin-bottom: .3rem;
+  border: 1px solid #cadaD1;
+  border-left: 3px solid #39765e;
+  background: #eef5ef;
+  border-radius: .3rem;
+}
+.entry-header { display: flex; gap: .45rem 1rem; flex-wrap: wrap; align-items: baseline; justify-content: space-between; }
+.entry-header h3 { flex: 1 1 15rem; }
+.entry p, .paper-list p { margin-top: .35rem; color: var(--muted); }
+.entry .metadata { margin-top: .25rem; font-size: .875rem; color: #3c5d50; }
+.tag {
+  flex: none;
+  background: #e6efe8;
+  color: #235542;
+  padding: .14rem .48rem;
+  border-radius: .25rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.featured .tag { background: #dbeade; }
+.paper-list { list-style: none; padding: 0; margin: 0; }
+.paper-list li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .82rem; }
+.paper-list li:first-child { padding-top: 0; }
+.paper-list li:last-child { padding-bottom: 0; }
+.paper-list li + li { border-top: 1px solid var(--border); }
+.footer { border-top: 1px solid var(--border); color: var(--muted); }
+.footer-inner { padding-block: 1.65rem; display: flex; gap: .25rem 1rem; flex-wrap: wrap; justify-content: space-between; }
+.footer a { color: var(--green); }
+@media (max-width: 760px) {
+  .frame { width: calc(100% - 2.6rem); }
+  .hero-inner { gap: 1.5rem; grid-template-columns: minmax(0, 1fr) 8.9rem; }
+  .section { grid-template-columns: minmax(0, 1fr); padding-block: 2rem; }
+  nav { gap: .4rem 1rem; }
+}
+@media (max-width: 520px) {
+  html { scroll-padding-top: 6.8rem; }
+  .masthead-inner { flex-wrap: wrap; gap: .15rem; padding-block: .55rem; }
+  .masthead-inner nav { width: 100%; justify-content: flex-start; gap: .2rem 1rem; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); padding-block: 2.2rem; }
+  .profile-card {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: .8rem;
+    align-items: center;
+    justify-self: start;
+    padding: .5rem .7rem .5rem .5rem;
+  }
+  .academic-facts { padding: 0; }
+  .entry.featured { padding: .85rem .95rem; }
+}
+@media print {
+  .masthead, .hero-actions, .skip { display: none; }
+  .hero { background: white; color: black; }
+  .hero-inner, .section { padding-block: 1rem; }
+  .hero p, .introduction strong, .academic-facts, .academic-facts strong { color: black; }
+  .section { display: block; }
+  h2 { margin-bottom: .75rem; }
+  .entry, .paper-list li { break-inside: avoid; }
+}
